@@ -1,0 +1,1 @@
+export const env={"PUBLIC_SITE_NAME":"Repair Café Datteln"}
