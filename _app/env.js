@@ -1,1 +1,1 @@
-export const env={"PUBLIC_SITE_NAME":"Repair Café Datteln"}
+export const env={"PUBLIC_SITE_NAME":"Repair-Café Datteln","PUBLIC_SITE_DOMAIN":"repaircafe-datteln.de","PUBLIC_SITE_URL":"www.repaircafe-datteln.de","PUBLIC_SITE_CONTACT_MAIL":"frage@repaircafe-datteln.de","PUBLIC_SITE_CONTACT_ADDRESS":"","PUBLIC_SITE_OWNER_NAME":"André Klawon","PUBLIC_SITE_OWNER_MAIL":"website@repaircafe-datteln.de","PUBLIC_SITE_OWNER_ADDRESS":"","PUBLIC_WEBMASTER_MAIL":"website@repaircafe-datteln.de"}
