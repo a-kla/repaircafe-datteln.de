@@ -1,8 +1,4 @@
-<<<<<<< HEAD:_app/immutable/nodes/5.B2mx3Dip.js
 import{a,t as s,b as z}from"../chunks/disclose-version.DSK62IE_.js";import"../chunks/legacy.VfJMa6x-.js";import{p as X,t as H,a as ee,c as l,f as te,r as i,s as e,n as f,i as D,k as le}from"../chunks/runtime.UpkLN-cZ.js";import{s as n,e as pe,i as de}from"../chunks/attributes.DwBthOqi.js";import{p as re,l as ue,s as me}from"../chunks/props.Ci_wqj25.js";import{M as he}from"../chunks/md_layout.VNpyxryG.js";import{C as h}from"../chunks/Container.B4Lo3vmm.js";import{c as fe,M as ce}from"../chunks/MD.nbnBHqrA.js";import{a as A}from"../chunks/store.DqHu4LQA.js";import{i as Q}from"../chunks/if.B-inDFjQ.js";import{A as T}from"../chunks/A.CmPvIFLI.js";var ve=s('<iframe class="svelte-zna471"></iframe>');function ge(w,o){X(o,!0);let _=re(o,"sandbox",3,"");const c=`<!DOCTYPE html>
-=======
-import{a,b as s,t as z}from"../chunks/disclose-version.CRuwhFuS.js";import"../chunks/legacy.BEfOKUHf.js";import{p as X,t as H,a as ee,c as l,f as te,r as i,s as e,n as f,k as D,x as le}from"../chunks/runtime.BM4kGj6f.js";import{s as n,e as pe,i as de}from"../chunks/public.CuMpGZly.js";import{p as re,i as Q,l as ue,s as me}from"../chunks/props.C1ZE155E.js";import{M as he}from"../chunks/md_layout.8_Djt8I9.js";import{C as h}from"../chunks/Container.zRtx1Gx8.js";import{c as fe,M as ce}from"../chunks/MD.BdsxbNV2.js";import{s as A}from"../chunks/store.D3Wgm4iJ.js";import{A as T}from"../chunks/A.C5af1wRH.js";var ve=s('<iframe class="svelte-zna471"></iframe>');function ge(w,o){X(o,!0);let _=re(o,"sandbox",3,"");const c=`<!DOCTYPE html>
->>>>>>> 824cf9cd907b48a7f1932dd40698e1d502b975e3:_app/immutable/nodes/4.aK0IroLv.js
   <html lang="de" style="display:table;height:100%;width:100%">
     <head>
       <meta charset="utf-8">
