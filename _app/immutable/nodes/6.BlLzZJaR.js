@@ -1,1 +1,0 @@
-import{a as r,t as a}from"../chunks/disclose-version.DSK62IE_.js";import"../chunks/legacy.VfJMa6x-.js";import{n as i}from"../chunks/runtime.UpkLN-cZ.js";var m=a("<h1>Etwas stimmt nicht!</h1> <p>Die Seite existiert leider nicht (mehr).</p>",1);function s(t){var e=m();i(2),r(t,e)}export{s as component};
