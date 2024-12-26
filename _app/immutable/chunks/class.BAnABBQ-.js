@@ -1,0 +1,1 @@
+import{n as c}from"./runtime.aMfB4SQh.js";function r(s,e,l){var n=s.__className,a=t(e,l);c&&s.className===a?s.__className=a:(n!==a||c&&s.className!==a)&&(e==null&&!l?s.removeAttribute("class"):s.className=a,s.__className=a)}function t(s,e){return(s??"")+(e?" "+e:"")}export{r as s};
