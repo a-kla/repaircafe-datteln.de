@@ -1,0 +1,31 @@
+---
+title: 'Unsere Hausordnung'
+description: 'Die Hausordnung des Repair Café Datteln'
+---
+<script lang="ts">
+  	// import MdsvexContainer from "$lib/mdsvex/Container.svelte";
+</script>
+
+## Kosten
+
+- Die Aktivitäten des REPAIR CAFES werden kostenlos und auf ehrenamtlicher Basis von den Reparaturexperten vor Ort ausgeführt.
+- Neue Materialien und Ersatzteile wie Elektrizitätskabel, Stecker, Sicherungen usw. sind nicht kostenlos und müssen gesondert bezahlt oder beschafft werden.
+- Eine freiwillige Spende wird sehr geschätzt.
+
+## Ablauf
+
+- Reparaturen werden soweit wie möglich vom Besucher selbst durchgeführt, erforderlichenfalls mit Hilfe der vor Ort anwesenden Reparaturfachleute.
+- Zur Vermeidung langer Wartezeiten wird *bei starkem Zulauf höchstens ein Gegenstand* je Besucher repariert.
+
+## Rechtliches
+
+- Das REPAIR CAFE ist kein kostenloser Reparaturdienstleister.
+- Es geht im REPAIR CAFE um *Hilfe zur Selbsthilfe*.
+- Haftungsansprüche können daher nur im Falle des Nachweises von Vorsatz oder grober Fahrlässigkeit für Schäden an Eigentum, Körper, Gesundheit oder Leben entstehen.
+- Die Reparaturfachleute geben *keine Garantie* auf die mit ihrer Hilfe durchgeführten Reparaturen und sind nicht dafür haftbar, wenn Gegenstände, die im REPAIR CAFE repariert wurden, zuhause nicht funktionieren.
+- Das Anbieten von defekten Gegenständen zur *Reparatur geschieht auf eigenes Risiko*.
+- Das REPAIR CAFE ist nur Gast in den von der Caritas zur Verfügung gestellten Räumen. Die Caritas ist weder rechtlich noch tatsächlich mit dem REPAIR CAFE verbunden und haftet deshalb nicht.
+- Die Reparaturfachleute behalten sich das Recht vor, bestimmte Gegenstände nicht zu reparieren.
+- Die Reparaturfachleute sind nicht dazu verpflichtet, demontierte Geräte, die nicht repariert werden können, wieder zusammenzusetzen.
+- Die Besucher des REPAIR CAFE sind selbst für die ordnungsgemäße Entsorgung von defekten oder funktionsuntüchtigen Geräten verantwortlich, die nicht repariert werden konnten.
+- Besuchern, die mit dieser Hausordnung nicht einverstanden sind,können wir leider nicht behilflich sein.

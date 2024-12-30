@@ -1,0 +1,33 @@
+node_modules
+
+# Output
+.output
+
+/.svelte-kit
+/build
+/build-optimized
+/backups
+/tests/output
+/tests/screenshots
+/test-results
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Env
+.env
+.env.*
+!.env.example
+!.env.test
+
+# Vite
+vite.config.js.timestamp-*
+vite.config.ts.timestamp-*
+
+# vs code mods
+## git history?
+.history
+
+# crash dump
+/core

@@ -1,0 +1,135 @@
+---
+title: 'Reparieren statt wegwerfen'
+description: 'Infos zum Repair Café in 45711 Datteln (NRW Deutschland). Wir helfen Ihnen ehrenamtlich bei der Reparatur defekter Geräte, Haushaltsgegenständen, Spielzeug etc.'
+---
+<script lang="ts">
+  	import MdsvexContainer from "$lib/mdsvex/Container.svelte";
+  	import Iframe from "$lib/component/Iframe.svelte";
+        import { PUBLIC_SITE_NAME } from '$env/static/public';
+
+        const calenderUrl = 'https://www.reparatur-initiativen.de/events/4883.ics'
+        const webcalUrl = calenderUrl.replace('https', 'webcal')
+	import Copy from '$lib/component/Copy.svelte';
+	import Events from '$lib/component/Events.svelte';
+
+        const lat=51.652408
+        const lng=7.336053
+        const zoom=15
+
+        const url = `https://www.reparatur-initiativen.de/widgets/map?zoomLevel=${zoom}&lat=${lat}&lng=${lng}`
+        // const url = `https://www.openstreetmap.org/export/embed.html?bbox=7.3311553%2C51.6521084%2C7.3311553%2C51.6521084&zoom=10&layers=H&marker=51.6521084%2C7.3311553`
+
+        const mapContent = `# Stadtplan
+        
+        ## Externer Inhalt
+        
+        Der Stadtplan wird vom **Netzwerk Reparatur-Initiativen** bereitgestellt, dieser nutzt wiederum Inhalte von **OpenStreetMap**.
+        
+        [Stadtplan laden](${url})
+`
+</script>
+
+<!-- imageLoading="eager"
+ title="Fotos: Empfang, Kuchentheke, Werkzeuge und Helfende Hände beim Löten © Repair Café Datteln"
+/-->
+
+![Fotos: Empfang, Kuchentheke, Werkzeuge und Helfende](Rat_Hilfe_Werkzeug_Kuchen2.png "Fotos: Empfang, Kuchentheke, Werkzeuge und Helfende Hände beim Löten © Repair Café Datteln")
+
+::::box
+<!-- Abschnitt soll besonders hervorgehoben werden. -->
+
+Das ehrenamtliche Team des **{PUBLIC_SITE_NAME}** hilft Ihnen mit *Rat*,
+ *helfenden Händen* und passendem *Werkzeug* bei der Reparatur defekter Geräte,
+  Haushaltsgegenständen, Spielzeug und weiterem.
+
+::::
+
+::::info[☕]
+<!-- Abschnitt ist eine Zusatzinfo, diese wird mit dem Emoji in [] gekennzeichnet.
+     Ohne Klammer => Info-Emoji -->
+
+Zur Verkürzung der Wartezeit werden *Getränke und Kuchen* angeboten.
+
+::::
+
+## Reparatur-Termine
+
+::::infoBox
+<!-- Abschnitt ist eine hervorgehobene Zusatzinfo. -->
+
+Das Repair Café Datteln findet *jeden 1. Samstag im Monat* jeweils von **14 bis 17 Uhr** statt.
+(Ausser an Feiertagen, dann am 2. Samstag.)
+::::
+
+::::warn
+<!-- Abschnitt ist eine warnende Zusatzinfo. -->
+
+Nach 16:30 nehmen wir keine Reparaturen mehr an.
+
+::::
+
+<Events />
+
+### Für Kalender-Apps
+
+::::indent
+Das Netzwerk Reparatur-Initiativen bietet für uns einen **iCalender** an.
+
+Damit können Sie die Termine ihrer *Kalender-App*
+oder anderen Programmen wie *Thunderbird und Outlook* hinzufügen.
+
+Auf manchen Geräten können Sie mit nur wenigen Klicks den
+ <a href={webcalUrl} role="button">Kalender ihrer App hinzufügen</a>.
+
+Alternativ können Sie den <a href={calenderUrl} type="text/calendar" role="button">iCalender herunterladen</a> und anschliessend mit der App öffnen.
+⚠️ Dies importiert *nur einmalig* die vorhandenen Termine.
+
+Wenn dies nicht klappt, können Sie die <Copy text={calenderUrl} class="inline">Kalender-Url kopieren</Copy>.
+Anschliessend erstellen Sie in Ihrer App einen neuen (Online-)Kalender und fügen die URL an entsprechender Stelle ein.
+::::
+
+#### Erinnerungen per E-Mail
+
+::::info[📧]
+
+Das [Netzwerk Reparatur-Initiativen](https://www.reparatur-initiativen.de/repair-cafe-datteln) bietet zudem den Service an, Sie über anstehende **Termine per E-Mail** zu informieren.
+
+::::
+
+## Anfahrt
+
+::::infoBox
+
+Wir nutzen die Räume des *„Treffpunkt Hachhausen“*.
+Diese befinden sich im Untergeschoss des **Westring 8**.
+
+::::
+
+<!-- "padding-left: 3rem" -->
+![Foto: Eingang Treffpunkt Hachhausen](TreffpunktHachhausen.jpg "Foto: Eingang Treffpunkt Hachhausen")
+
+::::info[♿]
+
+Sie können die Rampe in das Gebäude und den Fahrstuhl auf der linken Seite benutzen. Im Fahrstuhl muss die „nach unten“-Taste gedrückt gehalten werden.
+
+::::
+
+::::info[🚏]
+
+Direkt vor dem Gebäude befindet sich die *Bushaltestelle „**Westring**“* der Linie **232**. [Zur Fahrplanauskunft des VRR][Fahrplanauskunft]
+
+::::
+
+[Fahrplanauskunft]:https://www.vrr.de/de/fahrplan-mobilitaet/fahrplanauskunft/app/trip?formik=destination%3Dde%253A05562%253A3894%26itdDateDayMonthYear%3D05082023%26itdTime%3D1400%26itdTripDateTimeDepArr%3Darr&lng=de&trip=multiModalitySelected%3Dpt
+
+<!-- !!! allow-same-origin & allow-scripts = like no sandbox (security risk) -->
+<Iframe height=500 width=600
+    title="Stadtplan (Reparatur Initiativen / OpenStreetMap)"
+    markdown={mapContent}
+    sandbox="allow-scripts allow-same-origin" />
+
+<style>
+p:has(picture) {
+	padding-inline-start: 3rem;
+}
+</style>

@@ -1,0 +1,104 @@
+---
+title: 'Datenschutzerklärung'
+description: noindex # => Google & Co sollen auf diese Seite nicht verweisen
+---
+<script lang="ts">
+  	import MdsvexContainer from "$lib/mdsvex/Container.svelte";
+
+	import Md from '$lib/component/MD.svelte'
+	import { PUBLIC_HOSTER_ADDRESS } from '$env/static/public'
+
+</script>
+
+## Zusammenfassung
+
+Unser [Hoster](#hosting) verwendet Server-Log-Files um den Betrieb und die Sicherheit der Website zu gewährleisten.
+
+Sollten Sie uns kontaktieren, werden [Ihre Kontaktdaten](#kontakt) intern ggf. an mehre Personen weitergeleitet um Ihnen zeitnah antworten zu können.
+
+Durch einbinden [fremder Inhalte](#externe-inhalte-und-verlinkte-externe-seiten) (Stadtplan, Videos) werden möglicher Weise personenbezogene Daten (Ihre IP-Adresse) an die entsprechenden Betreiber übermittelt. Daher müssen Sie das Laden dieser Inhalte bei uns bestätigen.
+
+## Hosting
+
+Wir setzen für die Zurverfügungstellung unserer Website folgenden Hoster ein:
+
+:::card
+<Md pre="{ PUBLIC_HOSTER_ADDRESS }" />  
+:::
+
+Dies entspricht unserem berechtigten Interesse im Sinne des Art. 6 Abs. 1 S. 1 lit. f DSGVO, selbst keinen Server betreiben zu müssen.
+
+:::info
+
+GitHub hält sich nach eigenen Angaben an die Prinzipien des EU-U.S. Data Privacy Framework (DPF).
+Dies wurde vom US-Handelsministerium Zertifiziert.
+Damit kann davon ausgegangen werden, dass trotz möglicher Übertragung in Nicht-EU-Staten, ein ausreichend hoher Datenschutz geboten wird.
+
+:::
+
+Der Hoster ist technisch bedingt Empfänger und Nutzer einiger personenbezogener Daten (zB. Ihrer IP-Adresse).
+Er protokolliert eigenständig Zugriffe auf den Server und kann Daten an Strafverfolgungsbehörden oder andere staatliche Stellen weitergeben.
+
+Wir selbst haben keinen Zugriff auf die Protokolle und haben auch keine Anweisung zur Erstellung dieser erteilt.
+
+:::infoBox
+### Log-Files
+
+In den sogenannten (Server-)Log-Files werden von Hostern typischer Weise folgende Daten gespeichert:
+
+ - IP-Adresse
+ - die Adresse der vorher besuchten Website
+ - Datum und Uhrzeit der Anfrage
+ - Zeitzonendifferenz zur Greenwich Mean Time
+ - Inhalt der Anforderung
+ - HTTP-Statuscode
+ - übertragene Datenmenge
+ - Website, von der die Anforderung kommt
+ - Informationen zu Browser und Betriebssystem.
+
+Dies wird allgemein als Erforderlich erachtet, um eine Website anzuzeigen und die Stabilität und Sicherheit zu gewährleisten. Dies entspricht einem berechtigten Interesse im Sinne des Art. 6 Abs. 1 S. 1 lit. f DSGVO, kann aber auch auf Grund von rechtlichen Vorgaben notwendig sein.
+:::
+
+:::info
+
+Zu den [Datenschutzbestimmungen von GitHub](https://docs.github.com/de/site-policy/privacy-policies)
+
+:::
+
+
+## Externe Inhalte und verlinkte externe Seiten
+
+Bei dem Besuch unserer Website werden keine fremden Inhalte automatisch geladen. Wir bieten es Ihnen aber an Inhalte, die wir hilfreich finden, nachzuladen. Technisch gesehen entspricht das (Nach-)laden von Inhalten dem öffnen verlinkter Seiten.
+Die Anbieter dieser Inhalte bzw. Seiten erhalten dadurch Daten (siehe Log-Files beim [Hosting](#hosting)) auf deren Verarbeitung wir nur geringen bis keinen Einfluss haben.
+
+Externe Seiten kennzeichnen wir durch ein <span class="external">Symbol</span>.
+
+## Kontakt
+
+Sollten Sie mit uns Kontakt aufnehmen (zB. per E-Mail), werden die mitgeteilten Daten von uns gespeichert, um Ihr Anliegen zu bearbeiten.
+
+Die Daten werden intern ggf. an mehre Personen weitergeleitet.
+Dies entspricht unserem berechtigten Interesse (Art. 6 Abs. 1 lit f DSGVO) ihnen zeitnah antworten zu können.
+
+Wir werden die Daten löschen, sobald die Speicherung nicht mehr erforderlich ist oder die Verarbeitung einschränken, falls gesetzliche Aufbewahrungspflichten bestehen.
+
+::::box 
+
+## Ihre Rechte
+
+Bezüglich Ihrer persönlichen Daten haben Sie als betroffene Person grundsätzlich Recht auf:
+
+- Auskunft
+- Berichtigung oder Löschung
+- Widerspruch gegen die Verarbeitung bzw. Einschränkung der Verarbeitung
+- Widerruf einer erteilten Einwilligung mit Wirkung für die Zukunft
+- Übertragbarkeit Ihrer Daten zu anderen Diensten
+- Beschwerde bei einer Aufsichtsbehörde. Eine Liste der entsprechenden Behörden finden Sie unter: [https://www.bfdi.bund.de/DE/&ZeroWidthSpace;Infothek/Anschriften_Links/&ZeroWidthSpace;anschriften_links-node.html](https://www.bfdi.bund.de/DE/Infothek/Anschriften_Links/anschriften_links-node.html).
+
+:::info
+
+Nähere Infos zu Ihren Rechten finden Sie unter [https://www.bfdi.bund.de/&ZeroWidthSpace;DE/Buerger/Basiswissen/&ZeroWidthSpace;Betroffenenrechte/&ZeroWidthSpace;BetroffenenRechte_node.html](https://www.bfdi.bund.de/DE/Buerger/Basiswissen/Betroffenenrechte/BetroffenenRechte_node.html)
+
+:::
+
+::::

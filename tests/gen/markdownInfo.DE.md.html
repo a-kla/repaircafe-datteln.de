@@ -1,0 +1,106 @@
+<h1>Infos zum Markdown</h1>
+<p>TODO: Frontmatter</p>
+<h2>Absätze und Umbrüche</h2>
+<p>Absätze werden durch
+Leerzeilen voneinander
+getrennt.⏎</p>
+<p>Einen Umbruch erzwingt man
+durch ein Leerzeichen und ein \ vor dem Umbruch (␣\⏎). <br>Einfache Umbrüche (⏎)
+werden ignoriert.</p>
+<h2>Überschriften</h2>
+<h1>Überschrift 1. Grades (h1)</h1>
+<p>⚠ Verwendung selten nötig
+In page.svx wird die Seitenüberschrift automatisch aus dem Frontmatter <code>title: …</code> erstellt
+In page.svelte wird die Seitenüberschrift mittels <code>&lt;Head …/&gt;</code> Component erzeugt</p>
+<h2>Überschrift 2. Grades</h2>
+<p>…</p>
+<h6>Überschrift 6. Grades</h6>
+<p>Optional kann man Überschriften mit entsprechenden #-Symbolen abschließen.</p>
+<h2>Text-Auszeichnung</h2>
+<p><em>Kursiv</em> hervorgehoben
+<strong>Fett</strong> hervorgehoben
+<em><strong>Fett und Kursiv</strong></em>
+hervorgehoben
+Kursiv hervorgehoben
+Fett hervorgehoben
+Fett und kursiv hervorgehoben
+Alternativ kann man den Unterstrich (_) statt des Sternchens verwenden.</p>
+<h2>Listen und Aufzählungen</h2>
+<ul>
+<li><p>Ungeordnete Listen beginnen mit einem *, - oder +.</p>
+</li>
+<li><p>Verschachtlung durch</p>
+<ul>
+<li>Einrückung mit mindestens
+zwei Leerzeichen oder
+einem Tab.</li>
+<li>Absätze entstehen</li>
+</ul>
+<p>durch Fortsetzung
+der Einrückung⏎</p>
+</li>
+</ul>
+<ol>
+<li>Aufzählungen beginnen mit Zahlen</li>
+<li>Die richtige Nummerierung</li>
+<li>ist nicht wichtig</li>
+</ol>
+<h2>Hyperlinks</h2>
+<p><a href="https://url.tld" class="external" rel="external noindex" target="_blank">Link-Text</a>
+<a href="https://url.tld" class="external" rel="external noindex" target="_blank">Link</a>
+Referenzierte Links:
+<a href="pfad/bild.png">Link-Text</a>
+Link auf [Mac &amp; i].
+[Link][id2] mit Title-Attribut
+<a href="pfad/bild.png">id</a>: <a href="https://url.tld" class="external" rel="external noindex" target="_blank">http://url.tld</a>
+[Mac &amp; i]: <a href="https://mac-and-i.de" class="external" rel="external noindex" target="_blank">http://mac-and-i.de</a>
+[id2]: <a href="https://url.tld" class="external" rel="external noindex" target="_blank">http://url.tld</a> &quot; title&quot;</p>
+<h3>reine E-Mail-Adressen und URLs</h3>
+<p>Verlinkte <a href="mailto:mail@adresse.tld">mail@adresse.tld</a>
+Verlinkte URL <a href="https://url.tld" class="external" rel="external noindex" target="_blank">http://url.tld</a></p>
+<h2>Bilder</h2>
+<p><img src="pfad/bild.png" alt="Alt-Text"></p>
+<h3>Referenzierte Bilder</h3>
+<p>Ein Bild <img src="pfad/bild.png" alt="Alt-Text"></p>
+<p>Wie bei den Hyperlinks kann man auch optional das &quot;Title&quot;-Attribut angeben.</p>
+<h2>Zitate (Blockquotes)</h2>
+<blockquote>
+<p>Zitat-Blöcke funktionieren
+wie bei E-Mails</p>
+<blockquote>
+<p>inklusive Verschachtlung
+| Zitat-Blöcke funktionieren
+| wie bei E-Mails
+|
+| | inklusive Verschachtlung
+| |</p>
+</blockquote>
+</blockquote>
+<h2>Code</h2>
+<pre><code class="language-Markdown">  # Code-Block
+</code></pre>
+<p>Und <code>Inline-Code</code>.</p>
+<h2>Trennlinie</h2>
+<p>3 alleinstehende <code>-</code></p>
+<pre><code class="language-Markdown">---
+</code></pre>
+<hr>
+<h2>Escape-Sequenz</h2>
+<p>3. Keine Aufzählung
+Text mit *Sternchen*
+3. Keine Aufzählung
+Text mit <em>Sternchen</em>
+Die Escape-Sequenz gilt für: , `, *, _, {, }, [, ], (, ), #, +, -, ., !</p>
+<h2>Fußnoten</h2>
+<p>Text mit Fußnote[^fußnote]
+... Beliebiger Text ...
+[^fußnote]: Fußnoten-Text
+Text mit Fußnote 1
+... Beliebiger Text ...</p>
+<p>^fußnote: Fußnoten-Text</p>
+<h2>Tabellen</h2>
+<p>| Spalte 1 | Spalte 2 | Spalte 3 |
+| :------- | :------: | -------: |
+| Zeile 1 | Verbundene Zelle ||
+| Links | <em>Mitte</em> | Rechts |</p>
+<p>Es gibt Erweiterungen für Code-Editoren, die bei der Erstellung und Formatierung helfen.</p>
