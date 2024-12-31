@@ -29,5 +29,6 @@ vite.config.ts.timestamp-*
 ## git history?
 .history
 
-# crash dump
+# (playwright) crash dump
+# Hint: run docker with --ulimit core=0 to stop creation
 /core
