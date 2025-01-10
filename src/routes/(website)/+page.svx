@@ -33,7 +33,7 @@ description: 'Infos zum Repair Café in 45711 Datteln (NRW Deutschland). Wir hel
  title="Fotos: Empfang, Kuchentheke, Werkzeuge und Helfende Hände beim Löten © Repair Café Datteln"
 /-->
 
-![Fotos: Empfang, Kuchentheke, Werkzeuge und Helfende](Rat_Hilfe_Werkzeug_Kuchen2.png "Fotos: Empfang, Kuchentheke, Werkzeuge und Helfende Hände beim Löten © Repair Café Datteln")
+![Fotos: Empfang, Kuchentheke, Werkzeuge und Helfende]($lib/assets/images/Rat_Hilfe_Werkzeug_Kuchen2.png "Fotos: Empfang, Kuchentheke, Werkzeuge und Helfende Hände beim Löten © Repair Café Datteln")
 
 ::::box
 <!-- Abschnitt soll besonders hervorgehoben werden. -->
@@ -106,7 +106,7 @@ Diese befinden sich im Untergeschoss des **Westring 8**.
 ::::
 
 <!-- "padding-left: 3rem" -->
-![Foto: Eingang Treffpunkt Hachhausen](TreffpunktHachhausen.jpg "Foto: Eingang Treffpunkt Hachhausen")
+![Foto: Eingang Treffpunkt Hachhausen]($lib/assets/images/TreffpunktHachhausen.jpg "Foto: Eingang Treffpunkt Hachhausen")
 
 ::::info[♿]
 

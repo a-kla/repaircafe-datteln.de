@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { PUBLIC_REPO } from '$env/static/public'
 	import Head from '$lib/component/Head.svelte'
 	import Md from '$lib/component/MD.svelte'
 	import Container from '$lib/mdsvex/Container.svelte'
@@ -7,6 +8,11 @@
 
 /** [Question: mdInline]: Answer: mdBlock */
 const faq_Rc: FaqEntries = {
+	'Wann und wo ist das Repair Café?':
+		`Das Repair Café Datteln findet *in der Regel am **1. Samstag** im Monat* von 14:00 bis 17:00 Uhr im *Westring 8* statt.
+		
+		Details finden Sie auf unserer [Startseite](/).`,
+
 	'Muss ich mich vorher anmelden?':
 		'Nein, das ist bei uns nicht nötig.',
 
@@ -70,7 +76,7 @@ const faq_Rc: FaqEntries = {
 
 	'Wo finde ich weitere Informationen?':
 		`Allgemeine Informationen zu den Repair Cafés weltweit
-		finden Sie auf der Webseite <https://repaircafe.org/de/ueber>.`,
+		finden Sie auf der Webseite <https://repaircafe.org/de/>.`,
 }
 
 const faq_website: FaqEntries = {
@@ -88,12 +94,23 @@ const faq_website: FaqEntries = {
 */
 
 	'Wo kann ich mich über Fehler beschweren?':
-		`Falls es Probleme mit der Website gibt, Sie Fehler in unseren Texten entdecken oder Anregungen haben, können Sie eine Mail an <website@repaircafe-datteln.de> schreiben. Oder mit uns beim Repair Café reden.
+		`Bei Problemen mit der Website, Fehler in den Texten oder wenn Sie Anregungen haben,
+		können Sie eine Mail an <website@repaircafe-datteln.de> schreiben.
+		Oder mit uns beim Repair Café reden.
 		
-		Gerne können Sie auch ein [„Issue” auf Github](https://github.com/a-kla/repaircafe-datteln.de/issues) öffnen.`,
+		Falls Sie Github kennen, können Sie auch gerne direkt ein
+		[„Issue” auf Github](${PUBLIC_REPO}issues) oder „Pull-Request“ erstellen.`,
+
+	'Ist die Website Open-Source?':
+
+		`Es gibt einen [öffentlichen Code-Repository](${PUBLIC_REPO}) auf Github.
+		Dieser enthält nicht nur Code von mir sondern alles was Notwendig ist um diese Seite zu erstellen, inklusive fremder Inhalte.
+		Daher: ***Ja, aber** es darf nicht einfach alles frei kopiert werden.*
+		`,
+
 
 	'Womit wurde die Seite erstellt?':
-		`Mit SvelteKit (Svelte 5)`
+		`Mit [SvelteKit](https://www.svelte.dev) (Svelte 5, TypeScript), Markdown (hauptsächlich [MDsveX](https://mdsvex.com/)), VS Code als IDE und viele anderen Open-Source-Projekten.`,
 }
 
 </script>

@@ -1,0 +1,43 @@
+---
+title: 'Impressum'
+# description: noindex => Google & Co sollen auf diese Seite nicht verweisen
+description: noindex
+---
+<script lang="ts">
+  	import MdsvexContainer from "$lib/mdsvex/Container.svelte";
+	import Md from '$lib/component/MD.svelte'
+
+	import { PUBLIC_WEBMASTER_MAIL, PUBLIC_SITE_CONTACT_MAIL, PUBLIC_SITE_URL, PUBLIC_SITE_OWNER_ADDRESS} from '$env/static/public'
+</script>
+
+::::infoBox
+
+## Zur Klarstellung
+
+*Die Veranstaltung **Repair Café**, welche im „Treffpunkt Hachhausen“ in 45711 Datteln stattfindet* (kurz: [das] Repair Café Datteln),
+dient der Nachbarschaftshilfe bei Reparaturen und wird von ehrenamtlichen Helfern betrieben.
+
+Es ist Teil der niederländischen bzw. internationalen [Initiative „Repair Café“](https://www.repaircafe.org/de/ueber/)
+und des deutschsprachigen [Netzwerk Reparatur-Initiativen](https://www.reparatur-initiativen.de/).
+
+*Ansprechpartner und Organisator ist **Karl-Heiz Feldhaus*** (Unterstütz durch Reiner Spotke).
+
+Falls Sie das Repair Café Datteln kontaktieren möchten, können Sie an die Mail-Adresse <Md inline="<{ PUBLIC_SITE_CONTACT_MAIL }>"/> schreiben.
+
+::::
+
+## Betreiber der Website
+
+Im rechtlichen Sinne verantwortlicher Betreiber der Website { PUBLIC_SITE_URL } sowie der Facebook „Fanpage“ (neben Facebook selbst) ist:
+
+::::card
+<Md pre="{ PUBLIC_SITE_OWNER_ADDRESS }" />
+::::
+
+::::warn
+*An der Adresse werden **keine** Reparaturen durchgeführt.*
+::::
+
+::::info[📧]
+Bei Problemen mit dieser Website oder Anregungen und Fragen zu Website können Sie mich gerne direkt per Mail an <Md inline="<{ PUBLIC_WEBMASTER_MAIL }>"/> kontaktieren.
+::::
