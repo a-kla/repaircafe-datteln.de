@@ -11,6 +11,8 @@ function somethingElse(): string {
 	return '(any string from var or func)'
 }
 
+const padding = false;
+const pad = (length: number) => padding ? ' ' + '_'.repeat(length) + '  ' : ':'
 
 const template = report`
 No real Placeholder ${somethingElse()}
@@ -96,7 +98,7 @@ Final Cash including donations and outgoings: 130,00 €
 revenue (End - Start + payouts): 29,95 €
 
 payouts between Start & End:
-  • Payout 1 _    9,95 €
+  • Payout 1${pad(1)} 9,95 €
 
 (no outgoings)
 
@@ -126,12 +128,12 @@ Final Cash including donations and outgoings: 79,50 €
 revenue (End - Start + payouts): 29,95 €
 
 payouts between Start & End:
-  • Payout 1 _    9,95 €
+  • Payout 1${pad(1)} 9,95 €
 
 outgoings after our end cash check:
-  • Outgo 1 _________________   24,00 €
-  • Outgo 2 with longer Test    16,50 €
-   (Insgesamt _______________   40,50 €)
+  • Outgo 1${pad(17)} 24,00 €
+  • Outgo 2 with longer Test${pad(0)} 16,50 €
+  (Insgesamt${pad(15)} 40,50 €)
 
 We earned this time (End - Start + donation): 110,00 € (! outgoings excluded).
 `	)
@@ -157,12 +159,12 @@ Final Cash including donations and outgoings: -30,50 €
 revenue (End - Start + payouts): -40,05 €
 
 payouts between Start & End:
-  • Payout 1 _    9,95 €
+  • Payout 1${pad(1)} 9,95 €
 
 outgoings after our end cash check:
-  • Outgo 1 _________________   24,00 €
-  • Outgo 2 with longer Test    16,50 €
-   (Insgesamt _______________   40,50 €)
+  • Outgo 1${pad(17)} 24,00 €
+  • Outgo 2 with longer Test${pad(0)} 16,50 €
+  (Insgesamt${pad(15)} 40,50 €)
 
 We lost! :( this time (End - Start + donation): -40,00 € (! outgoings excluded).
 `	)
