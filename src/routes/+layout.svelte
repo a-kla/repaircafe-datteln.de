@@ -83,6 +83,6 @@
 	}
 
 	[aria-current='page'] {
-		border-bottom: 1px solid #f25846;
+		border-bottom: 1px solid #EF694A;
 	}
 </style>

@@ -9,6 +9,7 @@
 			<stop offset="80%"></stop>
 		</linearGradient>
 	</defs>
+	<!-- REPAIR ©️ Stichting Repair Café -->
 	<g id="R">
 		<path d="m0 20h3v-20h-3v20"></path>
 		<path d="m9 13 3 7h3l-3-7h-3"></path>
@@ -27,6 +28,7 @@
 		<path d="m90 5e-4h5c3 0 7 1 7 6s-4 6-7 6h-5v-3h5c3 0 3-1 3-3 0-1 0-3-3-3h-5v-3"></path>
 		<path d="m94 13 2.52 7h3.48l-2.52-7h-3.48"></path>
 	</g>
+	<!-- CAFE ©️ Stichting Repair Café -->
 	<g id="C">
 		<path
 			d="m131 13.1v0.557c0 3.15-2.43 6.3-7.63 6.3-5.75 0-8.37-3.57-8.37-8.67v-0.334h3.32l0.028 0.641c0.166 3.65 1.66 5.52 5.03 5.52 3.21 0 4.45-2.03 4.45-3.46v-0.557h3.18"
@@ -45,6 +47,7 @@
 		<path d="m177 12h9v-3h-9v3"></path>
 		<path d="m177 3h10v-3h-10v3"></path>
 	</g>
+	<!-- Location -->
 	<g id="L">
 		<path
 			d="m200 20v-20h5.68q3.25 0 5.55 1.1 2.3 1.1 3.54 3.3 1.23 2.2 1.23 5.5 0 3.3-1.23 5.57-1.2 2.23-3.47 3.39-2.27 1.13-5.42 1.13zm3.76-2.87h1.66q2.14 0 3.63-0.765 1.53-0.795 2.3-2.39 0.779-1.59 0.779-4.07 0-2.45-0.779-4.01-0.779-1.56-2.3-2.29-1.49-0.734-3.63-0.734h-1.66z"
@@ -91,24 +94,24 @@
 
 		&:nth-child(1),
 		&:nth-child(2) {
-			stop-color: #2d378b;
+			stop-color: #2e2c7e;
 		}
 		&:nth-child(3) {
-			stop-color: #E3220D;
+			stop-color: #EF694A;
 		}
 		&:nth-child(4) {
-			stop-color: #E3220D;
+			stop-color: #EF694A;
 		}
 	}
 
 	#R {
-		fill: #2d378b;
+		fill: #2e2c7e;
 	}
 	#C {
-		fill: #E3220D;
+		fill: #EF694A;
 	}
 	#L {
-		fill: url(#Gradient) #9300ff;
+		fill: url(#Gradient) #9300FF;
 	}
 
 </style>
