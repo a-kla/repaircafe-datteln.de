@@ -1,10 +1,30 @@
 /**
- *  Based on: https://stackoverflow.com/a/76795904
+ * Swap `light` and `dark` in the media rules (switching color schemes aka themes).
  * 
- * It swaps light and dark in the media rules.
  * Simply setting a class requires to duplicate the css.
- * One fore the media query and the same for the class.
-*/
+ * You need css in the media query and the same css in a `light` (or dark) class.
+ * 
+ * Uses session storage item 'forceScheme' to temporary store the chosen color scheme
+ * 
+ * Based on: https://stackoverflow.com/a/76795904 
+ * modified by André Klawon
+ * 
+ * Licensed under the Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0).
+ * 
+ * Copyright (c) 2023 some1and2
+ * Copyright (c) 2024 André Klawon
+ * 
+ * You are free to:
+ * - Share — copy and redistribute the material in any medium or format
+ * - Adapt — remix, transform, and build upon the material
+ * for any purpose, even commercially.
+ * 
+ * Under the following terms:
+ * - Attribution — You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.
+ * - ShareAlike — If you remix, transform, or build upon the material, you must distribute your contributions under the same license as the original.
+ * 
+ * No additional restrictions — You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.
+ */
 
 type Scheme = 'dark' | 'light'
 
@@ -68,7 +88,7 @@ export function use_stored_theme(defaultScheme: Scheme = 'light') {
     }
 
     /*
-       don't change the color if light/dark mode was chosen 
+     * don't change the color if a fixed light/dark mode was chosen 
     */
     window
         .matchMedia('(prefers-color-scheme: dark)')
@@ -76,7 +96,6 @@ export function use_stored_theme(defaultScheme: Scheme = 'light') {
             if (sessionStorage.getItem('forceScheme') !== null) {
                 switch_theme_rules()
             }
-            
         });
 
     // return stored || system

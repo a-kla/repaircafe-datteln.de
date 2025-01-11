@@ -11,22 +11,21 @@
 		[
 			'',
 			'System',
-			() => system == 'light' ? '☀' : '🌜',
+			() => (system == 'light' ? '☀' : '🌜'),
 			() => set_theme(undefined, defaultTheme),
-			() => system == 'light' ? 's-light' : 's-dark',
+			() => (system == 'light' ? 's-light' : 's-dark'),
 		],
 		['light', 'Hell', '☀', () => set_theme('light', defaultTheme), 's-light'],
 		['dark', 'Dunkel', '🌜', () => set_theme('dark', defaultTheme), 's-dark'],
 	] as const
 
-	onMount(
-		() => {
-			selected = sessionStorage.getItem('forceScheme') || ''
-			system = get_system_theme(defaultTheme)
-			use_stored_theme(defaultTheme)
+	let open: undefined | true = $state()
 
-		}
-	)
+	onMount(() => {
+		selected = sessionStorage.getItem('forceScheme') || ''
+		system = get_system_theme(defaultTheme)
+		use_stored_theme(defaultTheme)
+	})
 </script>
 
 <!-- make the scripts available in csr=false mode 
@@ -49,17 +48,17 @@
 }
 </svelte:head>
 -->
-<div class={{hidden: building /* don't show if JS disabled */}}>
-	<article style="color-scheme: dark">
-		<details>
+<div class={{ hidden: building /* don't show if JS is disabled */ }}>
+	<article style="color-scheme: dark" >
+		<details bind:open={open}>
 			<summary><span aria-label="Farbmodus">🎨</span> </summary>
 			<menu>
 				{#each themes as [value, desc, icon, onclick, classes]}
-					<li class={typeof classes == 'function' ? classes() : classes }>
+					<li class={typeof classes == 'function' ? classes() : classes}>
 						<label>
-							<input type="radio" name="colorScheme" {onclick} bind:group={selected} {value} />
+							<input type="radio" name="colorScheme" onclick={() => {onclick(); open=undefined}} bind:group={selected} {value} />
 							<span>
-								{desc} 
+								{desc}
 							</span>
 							<span>
 								{typeof icon == 'function' ? icon() : icon}
@@ -101,7 +100,7 @@
 		margin-block: auto;
 
 		summary [aria-label]::after {
-			content: ' ' attr(aria-label) / /* alt for Screenreader: */ "";
+			content: ' ' attr(aria-label) / /* alt for Screenreader: */ '';
 		}
 	}
 
@@ -116,11 +115,10 @@
 	}
 
 	li {
-		margin-block: .5rem;
+		margin-block: 0.5rem;
 		background-color: var(--s-color-bg);
-		padding: .5rem;
+		padding: 0.5rem;
 		border-radius: var(--s-block-radius);
-    border: var(--sugar-border-width) solid var(--s-color-bg-85-fg);
-
+		border: var(--sugar-border-width) solid var(--s-color-bg-85-fg);
 	}
 </style>
