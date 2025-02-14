@@ -51,7 +51,7 @@ ${['outgoList', { undefined: '', other: '\nNach dem „Kassensturz“ hatten wir
     */
 </script>
 
-<Head title="Mini-Apps" description="Kleine Tools -nicht nur- für unser Repair Café" />
+<Head title="Mini-Apps" description="Kleine Tools (nicht nur) für unser Repair Café" />
 
 <Md block="
 Diese kleinen Helfer könnten bei Bedarf auch an andere Repair Cafés angepasst werden…
@@ -91,3 +91,7 @@ Diese kleinen Helfer könnten bei Bedarf auch an andere Repair Cafés angepasst 
 	outgo={['für Getränke bei der Nachbesprechung', 'für eine Einzahlung auf das Sparbuch']}
 	{template}
 />
+
+<p>
+	<a href="pdfa/">generierte Dokumente</a>
+</p>

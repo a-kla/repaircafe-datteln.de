@@ -1,17 +1,13 @@
-// we don't need any JS on most pages, but we'll load
-// it in dev so that we get hot module replacement
+export const ssr = true
 
-import { dev } from '$app/environment'
-export const csr = true // dev
 /*
-! Important !:
-    Move pages with a component that needs JS in Browser
-    ie `export const csr = true` into the (csr) subdirectory.
+    we don't need to render the whole website in browser again,
+    but few components use client side JS so we can't disable CSR :/
 
     Partial hydration: https://github.com/sveltejs/kit/issues/1390 
 */
+export const csr = true // dev
 
-// This can be false if you're using a fallback (i.e. SPA mode)
 export const prerender = true
-//	export const prerender = false
+
 export const trailingSlash = 'always'

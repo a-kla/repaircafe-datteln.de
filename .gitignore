@@ -10,6 +10,7 @@ node_modules
 /tests/output
 /tests/screenshots
 /test-results
+/cache/*
 
 # OS
 .DS_Store

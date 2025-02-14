@@ -1,6 +1,11 @@
 <script lang="ts">
 	interface Props {
 		title: string
+
+		/**
+		 * SEO: Description for Search Engines
+		 *  noindex => Google & Co shall not Link to this Page (robots noindex)
+		 */
 		description: 'noindex' | string
 
 		meta?: {
