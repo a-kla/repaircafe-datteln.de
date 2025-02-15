@@ -106,7 +106,7 @@ export const createPdf = (
 
   docDefinition = Object.assign({
     // compress: false,
-    version: '1.7ext3', // PDF version
+    // version: '1.7ext3', // PDF version
     // @ts-expect-error @types/pdfmake needs update
     subset: 'PDF/A-3a', // Subset types: // PDF/A-1, PDF/A-1a, PDF/A-1b, PDF/A-2, PDF/A-2a, PDF/A-2b, PDF/A-3, PDF/A-3a, PDF/A-3b, PDF/UA
     tagged: true, // Mark document as Tagged PDF
@@ -211,8 +211,15 @@ export const createPdf = (
     , docDefinition
   );
 
-  const fontPath = browser ? '.' : dirname(fileURLToPath(import.meta.url)) + '/assets/pdf/fonts/'
-  const fonts = {
+  const fontPath = browser
+    ? '.'
+    /* ugly fix: "no such file or directory" Error on build
+    * maybe obsolete with pdfmake 0.3
+    */
+    : dirname(fileURLToPath(import.meta.url))
+      .replace('.svelte-kit/output/server/chunks', 'src/lib') + '/assets/pdf/fonts/'
+
+   const fonts = {
     Roboto: {
       normal: fontPath + 'Roboto-Regular.ttf',
       bold: fontPath + 'Roboto-Medium.ttf',
@@ -222,9 +229,9 @@ export const createPdf = (
     Fontello: {
       normal: fontPath + 'fontello.ttf'
     }
-  };
+  }
 
-  if (browser) {
+  if (browser /* includes dev */) {
     // @ts-expect-error addFonts() exist, outdates Types?
     pdfMake.addFonts(fonts);
     const pdfDoc = pdfMake.createPdf(docDefinition)
@@ -349,13 +356,13 @@ export const textInput = (rows: number): ContentStack | Content => (
     }
 )
 
-export const textInputLine = (label: string, width: number, headline: false | '1' |'2' | '3' = false): Column => {
+export const textInputLine = (label: string, width: number, headline: false | '1' | '2' | '3' = false): Column => {
 
   return {
     columns: [
-      {text: headline ? [hl(label, undefined, headline)] : label, width: `${width}%`},
+      { text: headline ? [hl(label, undefined, headline)] : label, width: `${width}%` },
       textInput(1)
-    ], columnGap: 2 * defaultMargin, marginBottom: defaultMargin  
+    ], columnGap: 2 * defaultMargin, marginBottom: defaultMargin
   }
 }
 
