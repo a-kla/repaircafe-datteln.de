@@ -1,12 +1,23 @@
 <script lang="ts">
+	import { building } from '$app/environment'
 	import Md from './MD.svelte'
 	// import { type Event } from 'schema-dts'
 
 	type IsoDate = string
+	const dayNames = [
+		'Sunday',
+			'Monday',
+			'Tuesday',
+			'Wednesday',
+			'Thursday',
+			'Friday',
+			'Saturday',
+		] as const
 
 	interface Props {
 		eventData: Record<IsoDate, { notice?: string; deferred?: string; canceled?: boolean }>
 		startTime: string
+		checkDayOfWeek?: typeof dayNames[number]
 	}
 
 	const {
@@ -15,7 +26,7 @@
 			'2025-01-04': {},
 			'2025-02-01': {},
 			'2025-03-01': { notice: '10 Jahre RC Datteln' },
-			'2025-04-04': {},
+			'2025-04-05': {},
 			'2025-05-03': {},
 			'2025-06-07': {},
 			'2025-07-05': {},
@@ -26,7 +37,21 @@
 			'2025-12-06': {},
 		},
 		startTime = '14:00',
+		checkDayOfWeek: checkDay = 'Saturday',
 	}: Props = $props()
+
+	if (building) {
+
+		Object.keys(eventData).forEach((isoDate) => {
+			const weekDay=dayNames[new Date(isoDate).getDay()]
+
+			if (weekDay !== checkDay) {
+				throw new Error(
+					`Invalid date: ${isoDate} is a ${weekDay} not ${checkDay}.`
+				)
+			}
+		})
+	}
 
 	let nextEvent = $state(
 		Object.keys(eventData).findIndex((isoDate) => isoDate + 'T' + startTime > new Date().toISOString())
