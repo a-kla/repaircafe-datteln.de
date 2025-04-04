@@ -6,18 +6,18 @@
 	type IsoDate = string
 	const dayNames = [
 		'Sunday',
-			'Monday',
-			'Tuesday',
-			'Wednesday',
-			'Thursday',
-			'Friday',
-			'Saturday',
-		] as const
+		'Monday',
+		'Tuesday',
+		'Wednesday',
+		'Thursday',
+		'Friday',
+		'Saturday',
+	] as const
 
 	interface Props {
 		eventData: Record<IsoDate, { notice?: string; deferred?: string; canceled?: boolean }>
 		startTime: string
-		checkDayOfWeek?: typeof dayNames[number]
+		checkDayOfWeek?: (typeof dayNames)[number]
 	}
 
 	const {
@@ -26,7 +26,7 @@
 			'2025-01-04': {},
 			'2025-02-01': {},
 			'2025-03-01': { notice: '10 Jahre RC Datteln' },
-			'2025-04-05': {},
+			'2025-04-05': { notice: 'NICHT Freitag den 4.!' },
 			'2025-05-03': {},
 			'2025-06-07': {},
 			'2025-07-05': {},
@@ -41,20 +41,23 @@
 	}: Props = $props()
 
 	if (building) {
-
 		Object.keys(eventData).forEach((isoDate) => {
-			const weekDay=dayNames[new Date(isoDate).getDay()]
+			if (!isoDate.match(/^\d{4}-\d{2}-\d{2}$/)) {
+				throw new Error(`Invalid date format: ${isoDate}, expected: YYYY-MM-DD.`)
+			}
+
+			const weekDay = dayNames[new Date(isoDate).getDay()]
 
 			if (weekDay !== checkDay) {
-				throw new Error(
-					`Invalid date: ${isoDate} is a ${weekDay} not ${checkDay}.`
-				)
+				throw new Error(`Invalid date: ${isoDate} is a ${weekDay} not ${checkDay}.`)
 			}
 		})
 	}
 
 	let nextEvent = $state(
-		Object.keys(eventData).findIndex((isoDate) => isoDate + 'T' + startTime > new Date().toISOString())
+		Object.keys(eventData).findIndex(
+			(isoDate) => isoDate + 'T' + startTime > new Date().toISOString(),
+		),
 	)
 	/*
 	Todo: const ld:Event = {}
@@ -88,33 +91,32 @@
 
 <ol>
 	{#each Object.entries(eventData) as [isoDate, event], i}
-	{#if i > nextEvent - 3}
-		
-		{@const date = new Date(Date.parse(event.deferred || isoDate))}
-		<li class={{ old: i < nextEvent, next: i == nextEvent }}>
-			<time datetime="{event.deferred || isoDate}T{startTime}">
+		{#if i > nextEvent - 3}
+			{@const date = new Date(Date.parse(event.deferred || isoDate))}
+			<li class={{ old: i < nextEvent, next: i == nextEvent }}>
+				<time datetime="{event.deferred || isoDate}T{startTime}">
+					{#if event.deferred}
+						<em>
+							<strong>
+								{new Intl.DateTimeFormat('de-DE', { day: 'numeric' }).format(date)}
+							</strong>
+							{new Intl.DateTimeFormat('de-DE', { month: 'short', year: 'numeric' }).format(date)}
+						</em>
+					{:else}
+						{new Intl.DateTimeFormat('de-DE', {
+							day: 'numeric',
+							month: 'short',
+							year: 'numeric',
+						}).format(date)}
+					{/if}
+				</time>
 				{#if event.deferred}
-					<em>
-						<strong>
-							{new Intl.DateTimeFormat('de-DE', { day: 'numeric' }).format(date)}
-						</strong>
-						{new Intl.DateTimeFormat('de-DE', { month: 'short', year: 'numeric' }).format(date)}
-					</em>
-				{:else}
-					{new Intl.DateTimeFormat('de-DE', {
-						day: 'numeric',
-						month: 'short',
-						year: 'numeric',
-					}).format(date)}
+					⚠{/if}
+				{#if event.notice}
+					<Md block={event.notice} />
 				{/if}
-			</time>
-			{#if event.deferred}
-				⚠{/if}
-			{#if event.notice}
-				<Md block={event.notice} />
-			{/if}
-		</li>
-	{/if}
+			</li>
+		{/if}
 	{/each}
 </ol>
 
