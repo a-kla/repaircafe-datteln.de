@@ -22,12 +22,13 @@
 
 	const {
 		eventData = {
-			'2025-07-05': {},
-			'2025-08-02': {},
 			'2025-09-06': {},
 			'2025-10-04': {},
-			'2025-11-01': { deferred: '2025-11-08', notice: 'wegen Allerheiligen' },
+			'2025-11-01': { deferred: '2025-11-08', canceled: true, notice: 'kann leider nicht statt finden!' },
 			'2025-12-06': {},
+			'2026-01-03': {},
+			'2026-02-07': {},
+			'2026-03-07': {},
 		},
 		startTime = '14:00',
 		checkDayOfWeek: checkDay = 'Saturday',
