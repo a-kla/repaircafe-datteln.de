@@ -22,13 +22,20 @@
 
 	const {
 		eventData = {
-			'2025-09-06': {},
-			'2025-10-04': {},
 			'2025-11-01': { deferred: '2025-11-08', canceled: true, notice: 'kann leider nicht statt finden!' },
 			'2025-12-06': {},
 			'2026-01-03': {},
 			'2026-02-07': {},
 			'2026-03-07': {},
+			'2026-04-04': { canceled: true, notice: 'Kein Repair Café im April (Ostern)' },
+			'2026-05-02': {},
+			'2026-06-06': {},
+			'2026-07-04': {},
+			'2026-08-01': {},
+			'2026-09-05': {},
+			'2026-10-03': { deferred: '2026-10-10', notice: 'Verschoben wegen Tag der Deutschen Einheit' },
+			'2026-11-07': {},
+			'2026-12-05': {},
 		},
 		startTime = '14:00',
 		checkDayOfWeek: checkDay = 'Saturday',
@@ -87,7 +94,7 @@
 	{#each Object.entries(eventData) as [isoDate, event], i}
 		{#if i > nextEvent - 3}
 			{@const date = new Date(Date.parse(event.deferred || isoDate))}
-			<li class={{ old: i < nextEvent, next: i == nextEvent }}>
+			<li class={{ old: i < nextEvent, next: i == nextEvent, canceled: event.canceled }}>
 				<time datetime="{event.deferred || isoDate}T{startTime}">
 					{#if event.deferred}
 						<em>
@@ -104,7 +111,7 @@
 						}).format(date)}
 					{/if}
 				</time>
-				{#if event.deferred}
+				{#if event.deferred || event.canceled}
 					⚠{/if}
 				{#if event.notice}
 					<Md block={event.notice} />
@@ -142,6 +149,17 @@
 
 			font-variant-emoji: text;
 			content: '🗓 ';
+		}
+	}
+
+	.canceled {
+		
+		border-color: #b03030;
+		background-color: #ddd;
+
+		& time {
+			opacity: 0.7;
+			text-decoration: line-through;
 		}
 	}
 
