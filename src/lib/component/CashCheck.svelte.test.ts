@@ -22,7 +22,6 @@ render(component, props)
 const user = userEvent.setup()
 
 test('CashCheck using counter Inputs', async () => {
-screen.debug()
 
 	const sum = () => screen.getByRole<HTMLOutputElement>('status').textContent
 

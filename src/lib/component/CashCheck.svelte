@@ -20,7 +20,7 @@
 		$state(euroValues.map((value) => [value, [undefined, undefined]]))
 
 	const resetCash = () => {
-		cash.forEach((value, index) => (cash[index] = [value[0], [undefined, undefined]]))
+		cash.map((value, index) => [value, [undefined, undefined]])
 	}
 
 	let cashSum = $derived.by(() => {
@@ -96,11 +96,11 @@
 </form>
 
 <style>
-	input:invalid {
+	:invalid {
 		background-color: #ffdddd;
 	}
-	input:disabled {
-		background-color: #ddd;
+	:disabled {
+		background-color: light-dark(#ddd, #888) ;
 	}
 
 	form {

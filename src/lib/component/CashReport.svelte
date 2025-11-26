@@ -142,6 +142,7 @@
 		) {
 			return 'Es sind nicht alle nötigen Angaben vorhanden.'
 		}
+		/* for readability, variables used in the template */
 		outgo
 		payout
 
@@ -366,15 +367,21 @@ async function getNewFileHandle() {
 
 	input:invalid {
 		background-color: #ffdddd;
+		color: #000;
 	}
 	input:disabled {
 		background-color: #ddd;
+		color: #333;
 	}
 
 	legend {
 		/* Fix sugar css*/
 		line-height: var(--legend-height);
 		padding-top: 0.25rem;
+	}
+
+	label {
+		color: #000;
 	}
 
 	form {

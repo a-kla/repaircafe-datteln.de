@@ -158,6 +158,7 @@ main img {
 		/*! purgecss ignore current !*/
 		--s-color-text-article: #000; /* This is used! */
 		--s-color-bg-article: #e8e8ff;
+		--s-color-bg-article-footer: var(--s-color-fg-65-bg);
 	}
 
 	main > h1,main > h2 {
@@ -188,6 +189,14 @@ main img {
 
 		a {
 			color: var(--s-color-bg-article);
+		}
+	}
+
+	article {
+		color: var(--s-color-text-article);
+
+		& input {
+			background: var(--s-color-fg-65-bg);
 		}
 	}
 	
