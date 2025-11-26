@@ -27,19 +27,19 @@
 	const template = report`Liebe Mitglieder des Repair-Cafés,
 hier der Kassen-Bericht für ${monthNamesDE[now.getMonth()]} ${now.getFullYear().toString()}:
 
-Unser aktueller Bar-Kassenbestand ist ${['final']}.
-
 Wir hatten bei dem letzten Repair-Café ${['visitors']} Besucher,
 diese haben ${['donations']} gespendet, somit im Durchschnitt ${['donationsAverage']}.
 
-Gestartet waren wir mit ${['start']} in der Kasse.
+Unser aktueller Bar-Kassenbestand ist ${['final']}.
 
-Während des Repair-Café hatten wir ${['payoutList', { undefined: 'keine Entnahmen!?', other: "folgende Entnahmen:\n$X" }]}
+Insgesamt hatten wir ein ${['+/-', { '-': 'Verlust', other: 'Zugewinn' }]} von ${['+/-Sum']},
+denn gestartet waren wir mit ${['start']} in der Kasse. 
+
+Während des Repair-Cafés hatten wir ${['payoutList', { undefined: 'keine Entnahmen!?', other: "folgende Entnahmen:\n$X" }]}
 
 Nach dem Repair-Café hatten wir ${['end']} in der Kasse,
 also durch dem Kuchenverkauf ${['revenue']} umgesetzt. 
 
-Mit Berücksichtigung der Spenden hatten wir ein ${['+/-', { '-': 'Verlust', other: 'Zugewinn' }]} von ${['+/-Sum']}.
 ${['outgoList', { undefined: '', other: '\nNach dem „Kassensturz“ hatten wir noch folgende Ausgaben:\n$X' }]}
 `
 
@@ -57,7 +57,7 @@ ${['outgoList', { undefined: '', other: '\nNach dem „Kassensturz“ hatten wir
 Diese kleinen Helfer könnten bei Bedarf auch an andere Repair Cafés angepasst werden…
 " />
 <noscript>
-	Tut mir leid, ohne JavaScript funktioniert es nicht…
+	Tut mir leid, ohne aktiviertem JavaScript funktioniert es nicht…
 </noscript>
 
 <CashCheck
@@ -82,11 +82,10 @@ Diese kleinen Helfer könnten bei Bedarf auch an andere Repair Cafés angepasst 
 		],
 	}}
 ></CashCheck>
-
 <CashReport
-	{cashStart}
-	{cashEnd}
-	{donations}
+	bind:cashStart={cashStart}
+	bind:cashEnd={cashEnd}
+	bind:donations={donations}
 	payout={['für Kuchen', 'an die Caritas für Getränke und Miete']}
 	outgo={['für Getränke bei der Nachbesprechung', 'für eine Einzahlung auf das Sparbuch']}
 	{template}
