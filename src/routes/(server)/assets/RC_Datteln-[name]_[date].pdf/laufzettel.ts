@@ -1,4 +1,4 @@
-import { questions, hl, header1, hr, scaleX, selection, textInput, MdText } from "$lib/PdfHelper";
+import { questions, hl, header1, hr, scaleX, selection, textInput, MdText, nextPage } from "$lib/PdfHelper";
 import type { Content, TDocumentDefinitions } from "pdfmake/interfaces";
 
 import { fileURLToPath } from "node:url";
@@ -204,7 +204,8 @@ Eine Haftung für die Funktion ist auf den Übergabezeitpunkt beschränkt. Helfe
             ], columnGap: 5 * defaultMargin
         },
     */
-    { text: '', pageBreak: 'after' },
+    nextPage(),
+
     questions(
         [
             'Zur Erinnerung: (Namen, Benötigte Ersatzteile etc.)',
@@ -316,6 +317,7 @@ export async function docDefinition() {
     return docDefinition
 }
 
-/** used to read the last modified Date */
+/** used to read the last modified Date
+ */
 export const file = fileURLToPath(import.meta.url)
 

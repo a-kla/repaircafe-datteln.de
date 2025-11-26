@@ -1,7 +1,8 @@
-import { createPdf } from "$lib/PdfHelper.js";
+import { createPdf, getPdfAsBuffer } from "$lib/PdfHelper.js";
 import { readFileSync, existsSync } from "node:fs";
 import { type PdfName, cacheDir, location, pdf, getPdfPath, getDate, availablePdfs } from "./configPdf";
 import type { EntryGenerator } from "./$types";
+import { building } from "$app/environment";
 
 export const prerender = true
 
@@ -17,6 +18,14 @@ export const entries: EntryGenerator = async () => {
 const readPdf = async (name: PdfName, date: string) => {
 	const file = `${cacheDir}${name}-${date}.pdf`;
 	if (!existsSync(file)) {
+		if (!building) {
+			return getPdfAsBuffer(
+				file,
+				// `${name} - RC ${location}`,
+				await (await pdf[name]).docDefinition()
+				)
+		}
+
 		createPdf(
 			file,
 			`${name} - RC ${location}`,

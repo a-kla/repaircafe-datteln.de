@@ -1,4 +1,4 @@
-import { checkBox, questions, header1, textInput } from "$lib/PdfHelper";
+import { checkBox, questions, header1, textInput, nextPage } from "$lib/PdfHelper";
 import type { Content, TDocumentDefinitions } from "pdfmake/interfaces";
 
 const defaultMargin = 10;
@@ -56,9 +56,9 @@ const content: Content[] = [
             'in Ordnung',
             'nicht zufriedenstellend',
         ] as const
-    )
-    ,
+    ),
 //     { text: 'Auf der Rückseite geht es weiter…', pageBreak: 'after', marginTop: defaultMargin },
+    nextPage(),
 
     questions(
         [

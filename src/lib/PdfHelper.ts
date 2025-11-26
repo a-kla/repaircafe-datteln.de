@@ -79,6 +79,49 @@ export const MdText = async (markdown: string, options: MOptions = {
   return content
 }
 
+export const nextPage = ():Content => ({ text: '', pageBreak: 'after' })
+
+export const getPdfAsBuffer = async (
+  file: PdfFile,
+  docDefinition: TDocumentDefinitions,
+) => {
+
+  const fontPath = browser
+    ? ''
+    /* ugly fix: "no such file or directory" Error on build
+    * maybe obsolete with pdfmake 0.3
+    */
+    : dirname(fileURLToPath(import.meta.url))
+      .replace('.svelte-kit/output/server/chunks', 'src/lib') + '/assets/pdf/fonts/'
+
+  const fonts = {
+    Roboto: {
+      normal: fontPath + 'Roboto-Regular.ttf',
+      bold: fontPath + 'Roboto-Medium.ttf',
+      italics: fontPath + 'Roboto-Italic.ttf',
+      bolditalics: fontPath + 'Roboto-MediumItalic.ttf'
+    },
+    Fontello: {
+      normal: fontPath + 'fontello.ttf'
+    }
+  }
+
+  const printer = new PdfPrinter(fonts as TFontDictionary)
+  const pdfDoc = printer.createPdfKitDocument(docDefinition, {bufferPages: true})
+
+  const range = pdfDoc.bufferedPageRange()
+  console.log(range);
+  
+
+  // pdf-lib code
+  // const pdf = await pdfDoc.save()
+
+  // pdfDoc.pipe(fs.createWriteStream(file));
+  pdfDoc.pipe(fs.createWriteStream(file))
+  pdfDoc.end()
+
+}
+
 export const createPdf = (
   file: PdfFile,
   title: string,
@@ -219,7 +262,7 @@ export const createPdf = (
     : dirname(fileURLToPath(import.meta.url))
       .replace('.svelte-kit/output/server/chunks', 'src/lib') + '/assets/pdf/fonts/'
 
-   const fonts = {
+  const fonts = {
     Roboto: {
       normal: fontPath + 'Roboto-Regular.ttf',
       bold: fontPath + 'Roboto-Medium.ttf',
@@ -238,7 +281,6 @@ export const createPdf = (
 
     pdfDoc.getBuffer(
       (pdf) => {
-        //      console.log('runs…');
         try {
           fs.writeFileSync('./' + file, pdf);
         } catch (err) {
