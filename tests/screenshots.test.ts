@@ -58,21 +58,19 @@ const makeSS = async (
 	await browser.close()
 }
 
+test.describe.configure({ mode: 'parallel' });
 test.describe('Make Screenshots',
 	async () => {
 		// test.describe.configure({ mode: 'parallel' })
 		test('on "iPhone" (Light mode)', async () => {
-			test.slow()
 			await makeSS('iPhone 8', webkit, 'light')
 		})
 
 		test('on Tablet (Dark mode)', async () => {
-			test.slow()
 			await makeSS('Galaxy Tab S4 landscape', chromium, 'dark')
 		})
 
 		test('on Desktop (Firefox)', async () => {
-			test.slow()
 			await makeSS('Desktop Firefox', firefox)
 		})
 
