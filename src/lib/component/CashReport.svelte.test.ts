@@ -34,12 +34,10 @@ ${['outgoList', { undefined: '(no outgoings)', other: 'outgoings after our end c
 We ${['+/-', { '-': 'lost! :(', other: 'earned' }]} this time (End - Start + donation): ${['+/-Sum']} (! outgoings excluded).
 `
 
-const donations = 100 // $state(100)
-
 const props: ComponentProps<typeof component> = {
 	cashStart: 10,
 	cashEnd: 30,
-	donations: donations, // how to bind: ?
+	donations: 100,
 	template: template,
 }
 
@@ -105,8 +103,8 @@ payouts between Start & End:
 We earned this time (End - Start + donation): 120,00 € (! outgoings excluded).
 `	)
 
-	await rerender({donations: 90})  // Input via component binding
-
+	await user.clear(screen.getByLabelText(/Spenden/))
+	await user.type(screen.getByLabelText(/Spenden/), '90')
 	await user.type(screen.getByLabelText(/Weitere Ausgabe/), 'Outgo 1')
 	await user.tab()
 	await user.keyboard('24')
@@ -137,12 +135,6 @@ outgoings after our end cash check:
 
 We earned this time (End - Start + donation): 110,00 € (! outgoings excluded).
 `	)
-
-	/**
-	 TODO: test expect(donations).toBe(90)
-	But how to set props bindable in render()?
-	*/
-	
 
 	await rerender({donations: 10, cashEnd: 0, cashStart: 50, visitors: 0})
 	expect(report()).toEqual(`
