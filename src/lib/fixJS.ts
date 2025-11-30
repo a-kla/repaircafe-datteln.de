@@ -11,7 +11,7 @@ export const fixRoundingError = (eur: number) => {
 }
 
 if (import.meta.vitest) {
-	const { describe, it, expect } = import.meta.vitest
+	const { describe, test, expect } = import.meta.vitest
 
 	describe.each([
 		// some JS Pitfalls
@@ -20,16 +20,16 @@ if (import.meta.vitest) {
 		{ calc: 0.1 + 0.7, result: (1 + 7) / 10 },
 		{ calc: -0.1 + -0.2 + 0.3, result: 0 },
 	])("Don't trust floating point numbers", ({ calc, result }) => {
-		it.fails(`You expect (${result}) but the result is ${calc}`, () => {
+		test.fails(`You expect (${result}) but the result is ${calc}`, () => {
 			expect(calc).toBe(result)
 		})
 
-		it('works with fixRoundingError()')
+		test('works with fixRoundingError()')
 		expect(fixRoundingError(calc)).toBe(result)
 	})
 
 	describe('fixRoundingError() and more then 2 decimal places', () => {
-		it.each([
+		test.each([
 			{ input: 0.999, result: 1 },
 			{ input: 0.995, result: 1 },
 			{ input: 1.004, result: 1 },
@@ -46,7 +46,7 @@ if (import.meta.vitest) {
 	})
 
 	describe.todo('fixRoundingError() known issues', () => {
-		it.each([
+		test.each([
 			// it is wrong but OK as we only expect inputs with 2 decimal places
 			{ input: -0.005, validResult: -0.01 },
 			{ input: -0.045, validResult: -0.05 },

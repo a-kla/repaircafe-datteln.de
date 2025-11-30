@@ -1,7 +1,5 @@
-// @vitest-environment jsdom
-// happy-dom don't work proper
-import { render, screen } from '@testing-library/svelte'
-import userEvent from '@testing-library/user-event'
+import { render } from 'vitest-browser-svelte'
+import { page, userEvent } from 'vitest/browser'
 import { expect, test, } from 'vitest'
 
 import component, { report } from './CashReport.svelte'
@@ -41,48 +39,49 @@ const props: ComponentProps<typeof component> = {
 	template: template,
 }
 
-const {rerender} = render(component, props)
-
 const user = userEvent.setup()
 
 test('CashReport ', async () => {
-	const report = () => screen.getByRole<HTMLOutputElement>('status').textContent
+	render(component, props)
+	const output = page.getByRole('status')
+	const visitors = page.getByLabelText('Anzahl') // der Besucher
+	const donations = page.getByLabelText('Spenden')
+	const cashStart = page.getByLabelText('Kasse Anfang')
+	const cashEnd = page.getByLabelText('Kasse Ende')
+	const morePayouts = page.getByText('Weitere Entnahme')
+	const moreOutgo = page.getByText('Weitere Ausgabe')
 
-	expect(report()).toContain('nicht alle nötigen Angaben vorhanden')
+	await expect.element(output).toHaveTextContent('nicht alle nötigen Angaben vorhanden')
 
-	await user.type(screen.getByLabelText('Anzahl'), '30') // der Besucher
+	await visitors.fill('30')
 
-	// console.log(report());
-	/* eslint no-irregular-whitespace: ["error", { "skipTemplates": true, "skipComments": true }] */
 	/*
 	Note: There is a non breaking space character before the €.
 	On macOS (and some Linux) press Alt + Space for it. Or copy & pase this -> <-
 	*/
-	expect(report()).toEqual(`
+	await expect.element(output).toHaveTextContent(`
 No real Placeholder (any string from var or func)
 
-Visitors: 30
-Donations: 100,00 € / 3,33 € per Visitor
-With Replacements: 100,00 € (3,33 € per Visitor)
+Visitors: 30 Donations: 100,00 € / 3,33 € per Visitor
+With Replacements: 100,00 € (3,33 € per Visitor)
 
-Cash @ Start: 10,00 €
-Cash @ End: 30,00 €
-Final Cash including donations and outgoings: 130,00 €
+Cash @ Start: 10,00 €
+Cash @ End: 30,00 €
+Final Cash including donations and outgoings: 130,00 € 
 
-revenue (End - Start + payouts): 20,00 €
+revenue (End - Start + payouts): 20,00 €
 
 payouts between Start & End:
 undefined
 (no outgoings)
-
-We earned this time (End - Start + donation): 120,00 € (! outgoings excluded).
+We earned this time (End - Start + donation): 120,00 € (! outgoings excluded).
 `	)
 
-	await user.type(screen.getByLabelText('Weitere Entnahme'), 'Payout 1') // new payout
+	await morePayouts.fill('Payout 1') // new payout
 	await user.tab()
-	await user.keyboard('9.95') // 9,95 on real browser with DE locale
+	await user.keyboard('9.95') // 9,95 on browser with DE locale
 
-	expect(report()).toEqual(`
+	await expect.element(output).toHaveTextContent(`
 No real Placeholder (any string from var or func)
 
 Visitors: 30
@@ -103,16 +102,16 @@ payouts between Start & End:
 We earned this time (End - Start + donation): 120,00 € (! outgoings excluded).
 `	)
 
-	await user.clear(screen.getByLabelText(/Spenden/))
-	await user.type(screen.getByLabelText(/Spenden/), '90')
-	await user.type(screen.getByLabelText(/Weitere Ausgabe/), 'Outgo 1')
+	await donations.clear()
+	await donations.fill('90')
+	await moreOutgo.fill('Outgo 1')
 	await user.tab()
 	await user.keyboard('24')
-	await user.type(screen.getByLabelText(/Weitere Ausgabe/), 'Outgo 2 with longer Test')
+	await moreOutgo.fill('Outgo 2 with longer Test')
 	await user.tab()
 	await user.keyboard('16.50')
 
-	expect(report()).toEqual(`
+	await expect.element(output).toHaveTextContent(`
 No real Placeholder (any string from var or func)
 
 Visitors: 30
@@ -136,8 +135,9 @@ outgoings after our end cash check:
 We earned this time (End - Start + donation): 110,00 € (! outgoings excluded).
 `	)
 
-	await rerender({donations: 10, cashEnd: 0, cashStart: 50, visitors: 0})
-	expect(report()).toEqual(`
+	
+	render(component,{donations: 10, cashEnd: 0, cashStart: 50, visitors: 0, template: template})
+	await expect.element(output).toHaveTextContent(`
 No real Placeholder (any string from var or func)
 
 Visitors: 0
