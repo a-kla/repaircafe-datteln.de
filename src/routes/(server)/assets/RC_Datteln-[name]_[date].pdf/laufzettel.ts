@@ -96,7 +96,7 @@ Bei allen **„geringfügigen Hilfeleistungen“** – also alles, was als Gefä
 
 Bei sogenannten **„gefahrenträchtigen Arbeiten“** ist die Haftung für jegliche mögliche Schäden (auch Folgeschäden), auf **grobe Fahrlässigkeit oder Absicht beschränkt**. Dies gilt für das Veranstaltungsformat bzw. den Veranstalter selbst, aber auch für die Mitarbeiter/Helfer. Als gefahrenträchtig werden alle Arbeiten verstanden, wo entweder ein bekanntes Risiko bei der Benutzung besteht, oder aber auch nur bei der Reparatur selbst.
 
-Eine Haftung für die Funktion ist auf den Übergabezeitpunkt beschränkt. Helfer können einen Reparaturversuch (begründet) abbrechen, wenn ein sicherer Betrieb eines Gerätes oder eine Reparatur nicht möglich ist (z.B. benötigtes Ersatzteil nicht erhältlich, zu teuer, Teile fehlen,...). Bei bestehenden Sicherheitsmängeln muss sich der Helfer durch die Unterschrift des Besuchers bestätigen lassen, dass das Gerät nicht weiterbetrieben werden darf. Eine ev. notwendige Entsorgung ist Sache des Besuchers.
+Eine Haftung für die Funktion ist auf den Übergabezeitpunkt beschränkt. Helfer können einen Reparaturversuch (begründet) abbrechen, wenn der sichere Betrieb oder die Reparatur eines Gerätes nicht möglich ist (z.B. benötigtes Ersatzteil nicht erhältlich, zu teuer, Geräteteile fehlen,...). Bei bestehenden Sicherheitsmängeln muss sich der Helfer durch die Unterschrift des Besuchers bestätigen lassen, dass das Gerät nicht weiterbetrieben werden darf. Eine ev. notwendige Entsorgung ist Sache des Besuchers.
 `),
 
     {
@@ -108,7 +108,7 @@ Eine Haftung für die Funktion ist auf den Übergabezeitpunkt beschränkt. Helfe
 
     selection(
         [
-            'Die Hausordnung und Haftungsbegrenzung akzeptiere ich.',
+            'Ich akzeptiere die Hausordnung und Haftungsbegrenzung.',
         ],
         'checkbox',
     ),
@@ -121,7 +121,7 @@ Eine Haftung für die Funktion ist auf den Übergabezeitpunkt beschränkt. Helfe
     ),
     selection(
         [
-            'Es ist ein Gerät, welches direkt an einer 230V Steckdose betrieben wird. („gefahrenträchtige Reparatur“)',
+            'Es ist ein Gerät, welches direkt an einer Haushaltssteckdose betrieben wird. („gefahrenträchtige Reparatur“)',
         ],
         'checkbox',
     ),
@@ -155,7 +155,7 @@ Eine Haftung für die Funktion ist auf den Übergabezeitpunkt beschränkt. Helfe
             {
                 width: 'auto',
                 stack:
-                    ['Ich vermute ein Defekt in der ']
+                    ['Ich vermute einen Defekt in der ']
             },
             {
                 width: '*',
@@ -208,7 +208,7 @@ Eine Haftung für die Funktion ist auf den Übergabezeitpunkt beschränkt. Helfe
 
     questions(
         [
-            'Zur Erinnerung: (Namen, Benötigte Ersatzteile etc.)',
+            'Zur Erinnerung: (Namen, benötigte Ersatzteile etc.)',
         ],
         3
     ),
@@ -216,7 +216,7 @@ Eine Haftung für die Funktion ist auf den Übergabezeitpunkt beschränkt. Helfe
     hl('Hinweis bezüglich „Zustimmung zur Daten-Verarbeitung“', false),
 
     // Datenschutz-Grundverordnung
-    await MdText(`Gemäß Artikel 2 Absatz 1 der DSGVO unterliegt dieses Formular nicht der DSGVO, denn es wird nicht digitalisiert. Selbstverständlich werden dennoch nur notwendige Angaben erbeten und diese nur Zweckmäßig verwendet.`),
+    await MdText(`Gemäß Artikel 2 Absatz 1 der DSGVO unterliegt dieses Formular nicht der DSGVO, denn es wird nicht digitalisiert. Selbstverständlich werden dennoch nur notwendige Angaben erbeten und diese nur zweckmäßig verwendet.`),
 
     hl('Vom Reparaturhelfer auszufüllen:', false),
 
@@ -289,8 +289,7 @@ Eine Haftung für die Funktion ist auf den Übergabezeitpunkt beschränkt. Helfe
 
     {stack:
         [
-            'Was hat Ihnen gefallen?',
-            'Hat Ihnen etwas gestört?',
+            'Was hat Ihnen gefallen? - Hat Sie etwas gestört?',
             'Was sollten wir Ihrer Meinung nach anders machen?'
         ], style: 'h3'
 
