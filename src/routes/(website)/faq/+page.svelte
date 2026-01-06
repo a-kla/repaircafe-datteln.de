@@ -22,7 +22,7 @@ const faq_Rc: FaqEntries = {
 
 	'Was sollte man **nicht** zum Repair Café bringen?':
 		` - Sperrige oder sehr schwere Sachen.
-		 - mögliche Garantie-Fälle. \
+		 - Mögliche Garantiefälle. \
 		Die Garantie erlischt meistens bei dem Versuch einer Selbstreparatur. Daher sollten Sie sich zuerst an Ihren Händler oder den Hersteller wenden.
 		 - Dinge, deren „Reparatur“ Sie nicht selbst durchführen wollen und Dienstleistungen von professionellen Anbietern entsprechen. Etwa Hosen, die gekürzt werden sollen.`,
 
@@ -30,7 +30,7 @@ const faq_Rc: FaqEntries = {
 		`Vielleicht, aber wir können es danach nicht testen.
 		Eventuell müssen nur Einstellungen geändert oder die Akkus eines Mobilteils getauscht werden. Solche Fälle übernimmt auch das Team von *Anti-Rost* bei Ihnen Zuhause. (siehe nächste Frage)`,
 
-	'Kann mal Jemand kurz vorbeikommen und etwas reparieren?':
+	'Kann mal jemand kurz vorbeikommen und etwas reparieren?':
 		`*Ja*, unsere Kollegen von den Initiativen **Anti-Rost**.
 
 		Anti-Rost bietet Kleinstreparaturen im Haushalt an, die auch von Familienangehörigen
@@ -58,19 +58,19 @@ const faq_Rc: FaqEntries = {
 		Sie können gerne bei uns im Repair-Café **Linux auf Ihrem Gerät testen** (sofern unser „Fachmann” anwesend ist).`,
 
 	'Kann ich etwas abgeben und „bei Gelegenheit“ abholen?':
-		'Nein. Wir sind nur an den angegebenen Terminen vor Ort und haben keine Lagerkapazitäten. Zudem sieht das Konzept „Repair Café” vor dass Sie nach Möglichkeit bei der Reparatur anwesend sind und mithelfen.',
+		'Nein. Wir sind nur an den angegebenen Terminen vor Ort und haben keine Lagerkapazitäten. Zudem sieht das Konzept „Repair Café” vor, dass Sie nach Möglichkeit bei der Reparatur anwesend sind und mithelfen.',
 
 	'Was kann ich machen, wenn ich an dem Samstag nicht kann?':
 		`Falls Sie nicht zu unserem nächsten Termin kommen können, haben Sie auch die Möglichkeit sich an ein anderes Repair Café zu wenden.
 
 		Die Repair Cafés in [Recklinghausen](https://www.altstadtschmiede.de)
 		und [Castrop-Rauxel](https://www.repaircafe-castroprauxel.de/) finden am 2. Samstag im Monat statt.
-		In [Walltrop](https://www.facebook.com/RCWaltrop) gibt es gar 2 Cafés: eins am *2. Freitag* und eins am letzten Samstag im Monat. (Stand der Info: 2023-06)`,
+		In [Waltrop](https://www.facebook.com/RCWaltrop) gibt es gar 2 Cafés: eins am *2. Freitag* und eins am letzten Samstag im Monat. (Stand der Info: 2023-06)`,
 
 	'Seid Ihr wirklich kostenlos?':
 		`Wir stellen unser Wissen, Werkzeuge und unsere Freizeit kostenlos zur Verfügung. Wir hoffen jedoch auf eine kleine Spende.
 
-		Neue Materialien und Ersatzteile wie Elektrizitätskabel, Stecker, Sicherungen usw. sind nicht kostenlos und müssen gesondert bezahlt oder beschafft werden.
+		Neue Materialien und Ersatzteile wie Kabel, Stecker, Sicherungen usw. sind nicht kostenlos und müssen gesondert bezahlt oder beschafft werden.
 
 		Außerdem müssen natürlich Kuchen und Getränke bezahlt werden.`,
 
@@ -104,7 +104,7 @@ const faq_website: FaqEntries = {
 	'Ist die Website Open-Source?':
 
 		`Es gibt einen [öffentlichen Code-Repository](${PUBLIC_REPO}) auf Github.
-		Dieser enthält nicht nur Code von mir sondern alles was Notwendig ist um diese Seite zu erstellen, inklusive fremder Inhalte.
+		Dieser enthält nicht nur Code von mir sondern alles was notwendig ist um diese Seite zu erstellen, inklusive fremder Inhalte.
 		Daher: ***Ja, aber** es darf nicht einfach alles frei kopiert werden.*
 		`,
 
