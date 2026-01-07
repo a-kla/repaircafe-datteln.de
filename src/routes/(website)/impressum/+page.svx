@@ -20,7 +20,7 @@ dient der Nachbarschaftshilfe bei Reparaturen und wird von ehrenamtlichen Helfer
 Es ist Teil der niederländischen bzw. internationalen [Initiative „Repair Café“](https://www.repaircafe.org/de/ueber/)
 und des deutschsprachigen [Netzwerk Reparatur-Initiativen](https://www.reparatur-initiativen.de/).
 
-*Ansprechpartner und Organisator ist **Karl-Heiz Feldhaus*** (Unterstütz durch Reiner Spotke).
+*Ansprechpartner und Organisator ist* **Karl-Heiz Feldhaus** (unterstützt durch Reiner Spotke).
 
 Falls Sie das Repair Café Datteln kontaktieren möchten, können Sie an die Mail-Adresse <Md inline="<{ PUBLIC_SITE_CONTACT_MAIL }>"/> schreiben.
 
