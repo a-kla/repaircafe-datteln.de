@@ -64,7 +64,7 @@
 		box-shadow: 0.5em 0.25em 0.5em #888;
 
 		:global(strong) {
-			color: var(--s-color-primary);
+			color: var(--s-color-secondary);
 		}
 
 		:global(a) {
