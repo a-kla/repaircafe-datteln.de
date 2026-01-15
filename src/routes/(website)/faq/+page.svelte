@@ -46,14 +46,14 @@ const faq_Rc: FaqEntries = {
 		`Ob eine Reparatur möglich ist, hängt von der Art des Defekts ab.
 
 		*Wir empfehlen jedoch unabhängig von der Reparatur* einen Wechsel zu Windows 10 / 11 oder Linux. Denn Windows 8 und ältere Versionen werden schon lange **nicht mehr mit Sicherheits-Updates versorgt**.
-		Auch Windows 10 wird ab Oktober 2025 nicht mehr mit kostenlosen Sicherheits-Updates versorgt.
+		Auch Windows 10 wird seit Oktober 2025 nicht mehr mit kostenlosen Sicherheits-Updates versorgt.
 
 		Auch wenn Sie glauben *„Macht nix, da ist nichts Wichtiges darauf.”*, sollten Sie bedenken dass ein unsicheres System als *Ausgangspunkt für weitere Angriffe* missbraucht werden kann. Angriffe auf kritische Infrastruktur als Teil eines „Botnetz” oder auf andere Computer und „smarte” Geräte in Ihrem Haushalt.
 
 		*Wir führen jedoch kein Upgrade auf Windows 11 **für Sie*** durch. Denn dafür gibt es zahlreiche professionelle Dienstleister, denen das Repair Café keine Konkurrenz machen möchte.
 
 		Auch sind leider viele Geräte angeblich zu alt für Windows 11. \
-		Doch diese Geräte kann man *mit Linux weiter nutzen*. 
+		Doch diese Geräte kann man *[mit Linux weiter nutzen](https://endof10.org)*.
 
 		Sie können gerne bei uns im Repair-Café **Linux auf Ihrem Gerät testen** (sofern unser „Fachmann” anwesend ist).`,
 
