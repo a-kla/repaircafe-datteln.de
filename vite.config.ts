@@ -31,8 +31,8 @@ export default defineConfig({
 						enabled: true,
 						provider: playwright(),
 						instances: [
-							// { browser: 'chromium' },
-							{ browser: 'firefox' },
+							{ browser: 'chromium' },
+							// { browser: 'firefox' }, // works on wayland, others not ()
 							// { browser: 'webkit' },
 						],
 					},
@@ -41,7 +41,7 @@ export default defineConfig({
 						'src/lib/server/**',
 						'src/**/*.ssr.{test,spec}.{js,ts}',
 					],
-					includeSource: ['src/**/*.{svelte,ts}'],
+					includeSource: ['src/**/*.svelte'],
 					setupFiles: ['./src/vitest-setup-client.ts'],
 				},
 			},
@@ -65,13 +65,16 @@ export default defineConfig({
 						'src/**/*.svelte.{test,spec}.{js,ts}',
 						'src/**/*.ssr.{test,spec}.{js,ts}'
 					],
+					includeSource: ['src/**/*.ts'],
 				},
 			},
 		],
 		coverage: {
-			include: ['src'],
 			// Improved performance: Vitest only checks files in src/
 			// instead of scanning the entire project
+			include: ['src/lib'],
+			// provider: 'istanbul' // for firefox
+			// reportErrors: true,
 		},
 	},
 });

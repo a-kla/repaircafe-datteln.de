@@ -9,6 +9,13 @@ import { sveltePreprocess } from 'svelte-preprocess'
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
+	vitePlugin: {
+		inspector: {
+			toggleKeyCombo: 'control-x',
+			showToggleButton: 'always',
+			toggleButtonPos: 'bottom-right'
+		}
+	},
 	extensions: ['.svelte', ...mdsvexConfig.extensions],
 	// Consult https://kit.svelte.dev/docs/integrations#preprocessors
 	// for more information about preprocessors
