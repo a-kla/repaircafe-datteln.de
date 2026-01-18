@@ -22,8 +22,6 @@
 
 	const {
 		eventData = {
-			'2025-11-01': { deferred: '2025-11-08', canceled: true, notice: 'kann leider nicht statt finden!' },
-			'2025-12-06': {},
 			'2026-01-03': {},
 			'2026-02-07': {},
 			'2026-03-07': {},
@@ -156,6 +154,7 @@
 		
 		border-color: #b03030;
 		background-color: #ddd;
+		color: #b03030;
 
 		& time {
 			opacity: 0.7;
