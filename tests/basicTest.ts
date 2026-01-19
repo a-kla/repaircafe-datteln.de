@@ -85,7 +85,7 @@ const genericCheck = async (
 export function testWebsite(config: TestConfig = defaultConfig, site: SiteData, pages: PageData[]) {
 
 	test('website', async ({ page, isMobile }) => {
-		test.slow()
+		// test.slow()
 		await page.goto(site.url)
 
 		const badWords = config.criticalStrings.reduce((o, key) => ({ ...o, [key]: 0 }), {})

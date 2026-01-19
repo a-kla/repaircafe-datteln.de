@@ -46,7 +46,7 @@ const content: Content[] = [
 
     questions(
         [
-            'Was halten Sie von dem Kuchen und Getränkeangebot der Cafeteria?',
+            'Was halten Sie vom Kuchen- und Getränkeangebot der Cafeteria?',
             'Wie beurteilen Sie die Räumlichkeiten?',
             'Wie beurteilen Sie die Fähigkeiten der Mitarbeiter/innen des Repair-Cafés?',
         ]
@@ -62,7 +62,7 @@ const content: Content[] = [
 
     questions(
         [
-            ['Wie sind Sie auf uns aufmerksam geworden?', ' (Mehrfaches Ankreuzen is möglich)']
+            ['Wie sind Sie auf uns aufmerksam geworden?', ' (Mehrfaches Ankreuzen ist möglich)']
         ], [
         'eigene Recherche',
         'Tageszeitung',
@@ -84,7 +84,7 @@ const content: Content[] = [
 
     questions(
         [
-            ['Wie informieren Sie sich über unsere Termine?', ' (Mehrfaches Ankreuzen is möglich)']
+            ['Wie informieren Sie sich über unsere Termine?', ' (Mehrfaches Ankreuzen ist möglich)']
         ], [
         'Tageszeitung',
         'Flyer',
@@ -119,7 +119,7 @@ const content: Content[] = [
     ),
 
     { text: 'Vielen Dank,', style: 'orange', bold: true, alignment: 'center', fontSize: 20, marginTop: 5 },
-    { text: 'dass Sie sich die Zeit zum ausfüllen dieses Fragebogens genommen haben.', alignment: 'center' },
+    { text: 'dass Sie sich die Zeit zum Ausfüllen dieses Fragebogens genommen haben.', alignment: 'center' },
 ]
 
 export async function docDefinition() {

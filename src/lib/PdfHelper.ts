@@ -150,7 +150,6 @@ export const createPdf = (
   docDefinition = Object.assign({
     // compress: false,
     // version: '1.7ext3', // PDF version
-    // @ts-expect-error @types/pdfmake needs update
     subset: 'PDF/A-3a', // Subset types: // PDF/A-1, PDF/A-1a, PDF/A-1b, PDF/A-2, PDF/A-2a, PDF/A-2b, PDF/A-3, PDF/A-3a, PDF/A-3b, PDF/UA
     tagged: true, // Mark document as Tagged PDF
     displayTitle: true, // Display of document title in window title
