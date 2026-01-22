@@ -3,8 +3,8 @@ import re_slug from 'rehype-slug'
 import re_autolink from 'rehype-autolink-headings'
 // import remarkToc from 'remark-toc'
 
-import { enhancedImages } from 'mdsvex-enhanced-images'
-import { defaultResolverFactory } from 'mdsvex-enhanced-images'
+import enhancedImage from '@m4r1vs/mdsvex-enhanced-images'
+// import { defaultResolverFactory } from 'mdsvex-enhanced-images'
 
 
 import remarkDirective from 'remark-directive'
@@ -16,7 +16,7 @@ import remarkFrontmatter from 'remark-frontmatter'
 
 import customDirective from './src/lib/mdsvex/container.js'
 
-import path, { join } from 'path'
+import path from 'path'
 import { fileURLToPath } from 'url'
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -38,16 +38,24 @@ const config = defineConfig({
 		 *
 		 * remarkFrontmatter, remarkParse => needed for remarkDirective
 		 * */
-		/*
-		[enhancedImages,
-			{
-				resolve: defaultResolverFactory((path) =>
-					join(__dirname, 'src', 'lib', 'assets', 'images', path)
-				)
+		enhancedImage,
+		{
+			// Optional: attributes to add to **all** `img` tags
+			attributes: {
+				fetchpriority: "auto", // browser's default
+				loading: "eager", // browser's default
+				decoding: "auto", // browser's default
+				class: "" // add classes to all images
+			},
+			// Optional: imagetools directives to add to **all** `img` tags
+			// see https://github.com/JonasKruckenberg/imagetools/blob/main/docs/directives.md#format
+			/*
+			imagetoolsDirectives: {
+				tint: "rgba(10,33,127)",
+				blur: 10,
 			}
-		],
-		*/
-		enhancedImages,
+			*/
+		},
 		remarkFrontmatter,
 		//		[remarkToc, {heading: 'Inhaltsverzeichnis (ToC)', parents: ['CustomContainer', 'root']}],
 		remarkParse,
