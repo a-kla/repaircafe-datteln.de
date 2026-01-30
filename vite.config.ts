@@ -1,8 +1,10 @@
+/// <reference types="vitest/config" />
+
 import { sveltekit } from '@sveltejs/kit/vite'
 import { enhancedImages } from '@sveltejs/enhanced-img'
 
 // for server:{ https: true }
-import path from 'node:path'
+import path, { resolve } from 'node:path'
 import mkcert from 'vite-plugin-mkcert'
 
 import { playwright } from '@vitest/browser-playwright';
@@ -17,8 +19,11 @@ export default defineConfig({
 			hosts: ['localhost', '127.0.0.1', '192.168.178.20'],
 		}),
 	],
-
-	test: {
+	server: {
+		https: {},
+		proxy: {},
+	},
+  	test: {
 		projects: [
 			{
 				// Client-side tests (Svelte components)
@@ -32,7 +37,7 @@ export default defineConfig({
 						provider: playwright(),
 						instances: [
 							{ browser: 'chromium' },
-							// { browser: 'firefox' }, // works on wayland, others not ()
+							// { browser: 'firefox' }, // works on wayland, others not without xvfb-run pnpm
 							// { browser: 'webkit' },
 						],
 					},
@@ -78,33 +83,3 @@ export default defineConfig({
 		},
 	},
 });
-
-
-/** @type {import('vite').UserConfig} 
-export default defineConfig(({ mode }) => ({
-
-	test: {
-		include: ['src/** /*.test.ts'],
-		includeSource: ['src/** /*.{svelte,ts}'],
-		environment: 'jsdom',
-	},
-	server: {
-		https: {},
-		proxy: {},
-	},
-	resolve: {
-		conditions: mode === 'test' ? ['browser'] : [],
-	},
-	output:{
-		experimentalMinChunkSize: 1024,
-	},
-	plugins: [
-		enhancedImages(),
-		sveltekit(),
-		mkcert({
-			savePath: path.resolve(process.cwd(), 'node_modules/.mkcert'),
-			hosts: ['localhost', '127.0.0.1', '192.168.178.20'],
-		}),
-	] as any[], // TODO: fix type issue
-}))
-*/
