@@ -54,6 +54,12 @@ Zur Verkürzung der Wartezeit werden *Getränke und Kuchen* angeboten.
 
 ## Reparatur-Termine
 
+::::warn
+
+Das Repair Café muss im Oktober leider ausfallen.
+
+::::
+
 ::::infoBox
 <!-- Abschnitt ist eine hervorgehobene Zusatzinfo. -->
 

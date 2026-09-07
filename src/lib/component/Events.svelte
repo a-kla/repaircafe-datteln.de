@@ -31,7 +31,7 @@
 			'2026-07-04': {},
 			'2026-08-01': {},
 			'2026-09-05': {},
-			'2026-10-03': { deferred: '2026-10-10', notice: 'Verschoben wegen Tag der Deutschen Einheit' },
+			'2026-10-03': { canceled: true,  deferred: '2026-10-10', notice: 'Fällt aus!' },
 			'2026-11-07': {},
 			'2026-12-05': {},
 		},
