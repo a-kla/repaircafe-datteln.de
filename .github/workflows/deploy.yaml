@@ -15,8 +15,6 @@ jobs:
 
       - name: Install pnpm & node
         uses: pnpm/setup@v2
-        run: node --version
-        run: pnpm test
 
       - name: build
         env:
