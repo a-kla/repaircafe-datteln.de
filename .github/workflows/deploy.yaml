@@ -11,22 +11,10 @@ jobs:
       contents: read
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
-      # If you're using pnpm, add this step then change the commands and cache key below to use `pnpm`
-      - name: Install pnpm
-        uses: pnpm/action-setup@v3
-        with:
-           version: 9
-
-      - name: Install Node.js
-        uses: actions/setup-node@v4
-        with:
-           node-version: 22
-           cache: pnpm
-
-      - name: Install dependencies
-        run: pnpm install
+      - uses: pnpm/setup@v2
+      - run: node --version
 
       - name: build
         env:
